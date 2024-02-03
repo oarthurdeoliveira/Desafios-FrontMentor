@@ -8,18 +8,94 @@
     padding: 0%;
 }
 
+:root {
+    --title_color: #4b545c;
+    --sub_color: hsl(201, 11%, 66%);
+
+    --ios: #26bba5;
+    --ios_shadow: #219f89;
+
+    --mac: #6174ff;
+    --mac_shadow: #5161da;
+
+
+    --main_font: 'Bai Jamjuree', sans-serif;
+}
+
 
 main {
     background-color: blue;
-    font-family: 'Bai Jamjuree', sans-serif;
+    font-family: var(--main_font);
 }
 
 section {
     background-color: red;
 }
 
-article {
-    background-color: rgb(139, 3, 3);
+#title {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+
+    background: url(../images/bg-header-desktop.png) white;
+}
+
+#title > img {
+    width: 65px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+#title > h1 {
+    color: var(--title_color);
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+#title > p {
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: var(--sub_color);
+}
+
+#title > button {
+    border-radius: 25px;
+
+    padding: 12px 30px;
+    margin-bottom: 45px;
+    border: none;
+
+    font-family: var(--main_font);
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+
+}
+
+.ios {
+    background-color: var(--ios);
+
+    margin-right: 10px;
+    box-shadow: 0px 1px 0px 1px var(--ios_shadow);
+}
+
+.mac {
+    background-color: var(--mac);
+
+    box-shadow: 0px 1px 0px 1px var(--mac_shadow);
+}
+
+#snippets {
+    background-color: white;
+    text-align: center;
+}
+
+#snippets_title {
+    margin-bottom: 20px;
+}
+
+#snippets_title > h2 {
+    margin-bottom: 5px;
 }
 
 footer {
