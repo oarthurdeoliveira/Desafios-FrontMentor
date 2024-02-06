@@ -58,7 +58,7 @@ section {
     color: var(--sub_color);
 }
 
-#title > button {
+.donwload {
     border-radius: 25px;
 
     padding: 12px 30px;
@@ -69,7 +69,6 @@ section {
     font-size: 14px;
     font-weight: 600;
     color: white;
-
 }
 
 .ios {
@@ -96,6 +95,59 @@ section {
 
 #snippets_title > h2 {
     margin-bottom: 5px;
+}
+
+#article_pc {
+    background-color: blue;
+
+    flex: 1 600px;
+    display: flex;
+    align-items: center;
+}
+
+#article_pc > h3 {
+    background-color: #5161da;
+}
+
+#pc_text {
+    margin-left: 20px;
+    text-align: left;
+}
+
+#acess {
+    text-align: center;
+}
+
+#acess > h2{
+    margin-bottom: 10px;
+    color: var(--title_color);
+}
+
+#acess > p {
+    margin-bottom: 50px;
+    color: var(--sub_color);
+}
+
+#supercharge {
+    text-align: center;
+}
+
+.charge_flex {
+    background-color: #219f89;
+    display: flex;
+
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.charge_flex > div {
+    flex: 1;
+    margin-bottom: 50px;
+}
+
+.charge_flex > img {
+    flex: 150px auto;
 }
 
 footer {
