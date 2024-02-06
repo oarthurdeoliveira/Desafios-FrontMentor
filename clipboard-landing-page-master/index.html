@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
@@ -17,7 +17,6 @@
 </head>
 <body>
   <main>
-
     <section id="title">
       <img src="/images/logo.svg" alt="Logo">
       <h1>A history of everything you copy</h1>
@@ -26,8 +25,8 @@
         Clipboard allows you to track and organize everything you
         copy. Instantly access your clipboard on all your devices.
       </p>
-      <button class="ios">Download for iOS</button>
-      <button class="mac">Download for Mac</button>
+      <button class="ios donwload">Download for iOS</button>
+      <button class="mac donwload">Download for Mac</button>
     </section>
     
     <section id="snippets">
@@ -42,18 +41,21 @@
         </p>
       </article>
       
-      <article>
+      <article id="article_pc">
         <img src="/images/image-computer.png" alt="Image of a computer">
-        <h3>Quick Search</h3>
-        <p>Easily search your snippets by content, category, web address, application, and more.</p>
-        <h3>iCloud Sync</h3>
-        <p>Instantly saves and syncs snippets across all your devices.</p>
-        <h3>Complete History</h3>
-        <p>Retrieve any snippets from the first moment you started using the app.</p>
+
+        <div id="pc_text">
+          <h3>Quick Search</h3>
+          <p>Easily search your snippets by content, category, web address, application, and more.</p>
+          <h3>iCloud Sync</h3>
+          <p>Instantly saves and syncs snippets across all your devices.</p>
+          <h3>Complete History</h3>
+          <p>Retrieve any snippets from the first moment you started using the app.</p>
+        </div>
       </article>
     </section>
     
-    <section>
+    <section id="acess">
       <h2>Access Clipboard anywhere</h2>
       <p>
         Whether you’re on the go, or at your computer, you can access all your Clipboard
@@ -62,30 +64,36 @@
       <img src="/images/image-devices.png" alt="Device images">
     </section>
   
-    <section>
+    <section id="supercharge">
       <h2>Supercharge your workflow</h2>
       <p>We’ve got the tools to boost your productivity.</p>
 
-      <article>
-        <img src="images/icon-blacklist.svg" alt="">
-        <h3>Create blacklists</h3>
-        <p>Ensure sensitive information never makes its way to your clipboard by excluding certain sources.</p>
+      <article class="charge_flex">
+        <div>
+          <img src="images/icon-blacklist.svg" alt="">
+          <h3>Create blacklists</h3>
+          <p>Ensure sensitive information never makes its way to your clipboard by excluding certain sources.</p>
+        </div>
         
-        <img src="images/icon-text.svg" alt="">
-        <h3>Plain text snippets</h3>
-        <p>Remove unwanted formatting from copied text for a consistent look.</p>
+        <div>
+          <img src="images/icon-text.svg" alt="">
+          <h3>Plain text snippets</h3>
+          <p>Remove unwanted formatting from copied text for a consistent look.</p>
+        </div>
 
-        <img src="images/icon-preview.svg" alt="">
-        <h3>Sneak preview</h3>
-        <p>Quick preview of all snippets on your Clipboard for easy access.</p>
+        <div>
+          <img src="images/icon-preview.svg" alt="">
+          <h3>Sneak preview</h3>
+          <p>Quick preview of all snippets on your Clipboard for easy access.</p>
+        </div>
       </article>
 
-      <article>
-        <img src="/images/logo-google.png" alt="">
-        <img src="/images/logo-ibm.png" alt="">
-        <img src="/images/logo-microsoft.png" alt="">
-        <img src="/images/logo-hp.png" alt="">
-        <img src="/images/logo-vector-graphics.png" alt="">
+      <article class="charge_flex">
+          <img src="/images/logo-google.png" alt="">
+          <img src="/images/logo-ibm.png" alt="">
+          <img src="/images/logo-microsoft.png" alt="">
+          <img src="/images/logo-hp.png" alt="">
+          <img src="/images/logo-vector-graphics.png" alt="">
       </article>
     </section>
   
@@ -95,8 +103,8 @@
         Available for free on the App Store. Download for Mac or iOS, sync with iCloud
         and you’re ready to start adding to your clipboard.
       </p>
-      <button>Download for iOS</button>
-      <button>Download for Mac</button>
+      <button class="ios donwload">Download for iOS</button>
+      <button class="mac donwload">Download for Mac</button>
     </section>
   </main>
 
