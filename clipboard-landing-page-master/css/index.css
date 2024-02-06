@@ -150,6 +150,43 @@ section {
     flex: 150px auto;
 }
 
+#bottom {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+}
+
+#bottom > h1 {
+    color: var(--title_color);
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+#bottom > p {
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: var(--sub_color);
+}
+
 footer {
     background-color: blueviolet;
+    display: flex;
+    column-gap: 200px;
+}
+
+footer > img {
+    width: 65px;
+    margin-left: 50px;
+}
+
+footer > ul {
+    list-style-type: none;
+
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
