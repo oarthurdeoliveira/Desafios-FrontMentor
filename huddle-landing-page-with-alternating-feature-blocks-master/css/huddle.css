@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+:root {
+    --button_color: hsl(322, 100%, 66%);
+
+    --main_font:'Poppins', sans-serif;;
+}
+
+body {
+    font-family: var(--main_font);
+    font-weight: 600;
+}
+
+#title {
+    background: url('images/bg-hero-desktop.svg'), white;
+}
+
+
+#title_logo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px;
+}
+
+#title_logo img {
+    min-height: 25px;
+    max-height: 25px;
+}
+
+#title_logo a {
+    text-align: center;
+    text-decoration: none;
+    width: 150px;
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow: 0px 0px 5px 0px #666666;;
+}
+
+#build {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#build img {
+    max-width: 50%;
+}
+
+#build div {
+    flex-direction: column;
+}
