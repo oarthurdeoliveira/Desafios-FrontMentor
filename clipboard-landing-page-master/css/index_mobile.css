@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+@media (max-width: 850px) {
+
+    #title img {
+        margin: 75px 0px 75px 0px;
+        width: 100px;
+    }
+    
+    #article_pc {
+        flex-direction: column;
+    }
+
+    #pc_text {
+        text-align: center;
+    }
+
+    .charge_flex {
+        flex-direction: column;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    footer img {
+        margin: 20px auto 30px auto;
+    }
+
+    footer > ul {
+        flex-direction: column;
+        margin: auto;
+    }
+
+    #logos {
+        margin: 50px auto auto auto;
+    }
+
+    #logo_charge {
+        gap: 50px
+    }
+}
