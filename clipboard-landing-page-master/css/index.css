@@ -105,11 +105,17 @@ main {
 }
 
 #article_pc {
+    margin-bottom: 100px;
 
-    flex: 1 600px;
+    flex: 1;
     display: flex;
     align-items: center;
     gap: 100px;
+}
+
+#article_pc img {
+    max-width: 85%;
+    min-width: 300px;
 }
 
 #article_pc > h3 {
@@ -125,6 +131,7 @@ main {
 
 #pc_text h3 {
     color: var(--title_color);
+    margin-bottom: 5px;
 }
 
 #pc_text p {
@@ -134,6 +141,11 @@ main {
 
 #acess {
     text-align: center;
+}
+
+#acess img {
+    max-width: 85%;
+    min-width: 300px;
 }
 
 #acess > h2{
