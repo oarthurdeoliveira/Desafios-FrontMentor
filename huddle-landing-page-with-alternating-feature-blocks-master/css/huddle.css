@@ -59,5 +59,51 @@ body {
 }
 
 #build div {
+    display: flex;
     flex-direction: column;
+}
+
+#build div > p {
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+#build div > h1 {
+    font-size: 35px;
+    width: 500px;
+    padding-bottom: 20px;
+}
+
+.button {
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+
+    color: white;
+    background-color: var(--button_color);
+    width: 250px;
+    padding: 15px;
+    border-radius: 50px;
+}
+
+.short {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    box-shadow: 0px 0px 5px 0px #8d8d8d81;
+    max-width: 85%;
+
+    margin: 20px auto 30px auto;
+
+    border-radius: 20px;
+}
+
+.short > img {
+    max-width: 40%;
+}
+
+.short_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
