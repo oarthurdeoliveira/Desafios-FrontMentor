@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="stylesheet" href="css/huddle.css">
+  <link rel="stylesheet" href="css/huddle_mobile.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Huddle landing page with alternating feature blocks</title>
@@ -32,7 +33,7 @@
 
             <a class="button" href="#">Get Started For Free</a>
           </div>
-          <img src="images/illustration-mockups.svg" alt="Ilustration">
+          <div><img src="images/illustration-mockups.svg" alt="Ilustration"></div>
         </article>
         
       </section>
@@ -70,38 +71,66 @@
         <img src="images/illustration-your-users.svg" alt="">
       </section>
     
-      <section>
+      <section id="main_footer">
         <h2>Ready To Build Your Community?</h2>
-        <a href="#">Get Started For Free</a>
+        <a class="button" href="#">Get Started For Free</a>
       </section>
   </main>
 
     <footer>
-      <img src="images/logo.svg" alt="Huddle logo">
-      
-      <img src="images/icon-location.svg" alt="Location icon">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua
-      </p>
-      <img src="images/icon-phone.svg" alt="Phone icon">
-      <p>+1-543-123-4567</p>
-      <img src="images/icon-email.svg" alt="Email icon">
-      <p>example@huddle.com</p>
-      <a href="">About Us</a>
-      <a href="">What We Do</a>
-      <a href="">FAQ</a>
-      <a href="">Career</a>
-      <a href="">Blog</a>
-      <a href="">Contact Us</a>
-      <p>&copy; Copyright 2018 Huddle. All rights reserved.</p>
+
+      <section>
+        <img id="logo_footer" src="images/logo.svg" alt="Huddle logo">
+
+        <div class="footer_icons">
+          <img src="images/icon-location.svg" alt="Location icon">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua
+          </p>
+        </div>
+
+        <div class="footer_icons">
+          <img src="images/icon-phone.svg" alt="Phone icon">
+          <p id="test">+1-543-123-4567</p>
+        </div>
+
+        <div class="footer_icons">
+          <img src="images/icon-email.svg" alt="Email icon">
+          <p>example@huddle.com</p>
+        </div>
+
+      </section>
+
+      <section>
+        <a href="">About Us</a>
+        <a href="">What We Do</a>
+        <a href="">FAQ</a>
+      </section>
+
+      <section>
+        <a href="">Career</a>
+        <a href="">Blog</a>
+        <a href="">Contact Us</a>
+      </section>
+
+      <section>
+        <div id="icons_social">
+          <a href="" target="_blank"><img class="icons" src="images/icons/facebook-svgrepo-com.svg" alt=""></a>
+          <a href="" target="_blank"><img class="icons" src="images/icons/twitter-svgrepo-com.svg" alt=""></a>
+          <a href="" target="_blank"><img class="icons" src="images/icons/instagram-svgrepo-com.svg" alt=""></a>
+        </div>
+        <p>&copy; Copyright 2018 Huddle. All rights reserved.</p>
+      </section>
+
+
     </footer>
 
-    <footer>
+    <div>
       <p class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-        Coded by <a href="#">Your Name Here</a>.
+        Coded by <a href="#">Artnoobbr</a>.
       </p>
-    </footer>
+    </div>
 </body>
 </html>
