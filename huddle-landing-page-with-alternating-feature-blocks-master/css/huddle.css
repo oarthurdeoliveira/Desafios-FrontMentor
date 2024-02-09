@@ -8,9 +8,14 @@
 }
 
 :root {
-    --button_color: hsl(322, 100%, 66%);
+    --button_color: #ff52bf;
+    --sub_text : grey;
+
+    --footer_color: #00252e;
+    --footer_text: #ffffff;
 
     --main_font:'Poppins', sans-serif;;
+
 }
 
 body {
@@ -44,18 +49,20 @@ body {
     width: 150px;
     border-radius: 30px;
     padding: 10px;
-    box-shadow: 0px 0px 5px 0px #666666;;
+    box-shadow: 0px 0px 5px 0px #66666688;
+    color: black;
 }
 
 #build {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
 
 #build img {
-    max-width: 50%;
+    max-width: 90%;
 }
 
 #build div {
@@ -90,8 +97,9 @@ body {
     display: flex;
     flex-direction: row;
     padding: 30px;
-    box-shadow: 0px 0px 5px 0px #8d8d8d81;
-    max-width: 85%;
+    justify-content: space-around;
+    box-shadow: 0px 0px 5px 0px #8d8d8d75;
+    max-width: 88%;
 
     margin: 20px auto 30px auto;
 
@@ -100,10 +108,101 @@ body {
 
 .short > img {
     max-width: 40%;
+    min-height: 40%;
 }
 
 .short_text {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.short_text > p {
+    font-weight: lighter;
+    color: var(--sub_text);
+    width: 500px;
+}
+
+#main_footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background-color: white;
+
+    margin: auto;
+    max-width: 50%;
+
+    padding: 30px;
+
+
+    border-radius: 15px;
+
+    position: relative;
+    top: 60px;
+    
+}
+
+
+footer {
+    background-color: var(--footer_color);
+    color: var(--footer_text);
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    font-size: 13px;
+    font-weight: lighter;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--footer_text);
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+#logo_footer {
+    max-width: 25%;
+
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(17deg) brightness(107%) contrast(101%);
+}
+
+footer section {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer_icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer_icons > p {
+    width: 500px;
+}
+
+#icons_social {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.icons:hover {
+    filter: invert(56%) sepia(48%) saturate(5495%) hue-rotate(298deg) brightness(108%) contrast(101%);
+}
+
+.icons {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(17deg) brightness(107%) contrast(101%);
+    width: 30px;
 }
