@@ -8,6 +8,7 @@
 }
 
 :root {
+    --title_color: #edfbfe;
     --button_color: #ff52bf;
     --sub_text : grey;
 
@@ -24,7 +25,8 @@ body {
 }
 
 #title {
-    background: url('images/bg-hero-desktop.svg'), white;
+    background: url(../images/bg-hero-desktop.svg), var(--title_color);
+    margin-bottom: 120px;
 }
 
 
@@ -106,6 +108,10 @@ body {
     border-radius: 20px;
 }
 
+.inverse {
+    flex-direction: row-reverse;
+}
+
 .short > img {
     max-width: 40%;
     min-height: 40%;
@@ -120,7 +126,11 @@ body {
 .short_text > p {
     font-weight: lighter;
     color: var(--sub_text);
-    width: 500px;
+    width: auto;
+}
+
+.short_text > h2 {
+    width: auto;
 }
 
 #main_footer {
@@ -206,3 +216,5 @@ footer section {
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(17deg) brightness(107%) contrast(101%);
     width: 30px;
 }
+
+

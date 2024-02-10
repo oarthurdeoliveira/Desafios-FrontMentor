@@ -1,14 +1,35 @@
+@import url(huddle.css);
+
 @media (max-width: 850px) {
+
+    #title {
+        background: url(../images/bg-hero-mobile.svg), var(--title_color);
+    }
 
     #build {
         display: flex;
         flex-direction: column;
-        align-items: center;
     }
 
-    #build > div {
+    #build div {
         display: flex;
         align-items: center;
+        text-align: center;
+    }
+
+    #build div > h1 {
+        font-size: 30px;
+        font-weight: 600;
+        width: auto;
+    }
+
+    #build div > p {
+        width: auto;
+        margin-bottom: 25px;
+    }
+
+    #build a {
+        margin-bottom: 65px;
     }
 
 
@@ -16,5 +37,27 @@
         max-width: 80%;
     }
 
+    .short {
+        flex-direction: column-reverse;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+        max-width: 75%;
+    }
+
+    .short_text {
+        text-align: center;
+        align-items: center;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: self-start;
+    }
+
+    #icons_social {
+       text-align: center;
+    }
     
 }
