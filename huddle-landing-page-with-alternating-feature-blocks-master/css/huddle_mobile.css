@@ -4,6 +4,16 @@
 
     #title {
         background: url(../images/bg-hero-mobile.svg), var(--title_color);
+        margin-bottom: 80px;
+    }
+
+    #title_logo img {
+        width: 120px;
+    }
+
+    #title_button {
+        width: 90px;
+        padding: 5px 20px 5px 20px;
     }
 
     #build {
@@ -46,14 +56,36 @@
         max-width: 75%;
     }
 
+    .short > img {
+        max-width: 90%;
+        margin: 20px 0px 60px 0px;
+    }
+
     .short_text {
         text-align: center;
         align-items: center;
     }
 
+    .short_text > h2 {
+        
+        margin-bottom: 15px;
+    }
+
     footer {
         flex-direction: column;
         align-items: self-start;
+    }
+
+    #logo_footer {
+        width: 200px;
+    }
+
+    footer section {
+        margin-top: 100px;
+    }
+
+    .footer_icons > p {
+        width: auto;
     }
 
     #icons_social {
