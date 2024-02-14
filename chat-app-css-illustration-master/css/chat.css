@@ -7,14 +7,20 @@
 
 :root {
     --top_chat: #e942ff, #8838ff;
-    --chat_background: #dededf;
+    --chat_background: #f5f3f7;
 
     --samuel_background: #eee3f4;
     --samuel_chat: #9241c8;
     --client_background: white;
     --client_chat: #6e5d7e;
+    --box_shadow_texts: #87878775;
 
+    --radio_button: #e570ff;
+    --text_color: grey;
     --submit_background: #3e2753;
+
+    --main_h1: #3e2753;
+    --main_p: #a39daa;
 
 }
 
@@ -27,12 +33,31 @@ body {
     font-family: "Rubik", sans-serif;
 }
 
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#decoration {
+    position: absolute;
+    left: -30px;
+    width: 500px;
+    height: 150%;
+    background: linear-gradient(180deg, var(--top_chat));
+    border-radius: 0px 0px 100px 100px;
+}
+
 #smartphone {
+    position: relative;
     display: flex;
     flex-direction: column;
-    width: 500px;
+    flex-shrink: 1;
+    width: 400px;
     height: auto;
     padding: 20px;
+    background-color: white;
 
     box-shadow: 0px 0px 5px 2px #BABABA;
     border-radius: 30px;
@@ -107,6 +132,8 @@ não sei se tem maneiras melhores, essa foi a primeira coisa que veio a mente.
 #chat {
     background-color: var(--chat_background);
     padding: 20px;
+
+    border-radius: 0px 0px 20px 20px;
 }
 .samuel {
     background-color: var(--samuel_background);
@@ -117,6 +144,8 @@ não sei se tem maneiras melhores, essa foi a primeira coisa que veio a mente.
     border-radius: 15px 15px 15px 5px;
     
     margin: 15px 0px 15px 0px;
+
+    box-shadow: 0px 0px 10px -2px var(--box_shadow_texts);
 }
 
 .client {
@@ -126,6 +155,8 @@ não sei se tem maneiras melhores, essa foi a primeira coisa que veio a mente.
     padding: 10px;
     height: auto;
     border-radius: 15px 15px 5px 15px;
+
+    box-shadow: 0px 0px 10px -2px var(--box_shadow_texts);
 }
 
 #left {
@@ -175,7 +206,7 @@ não sei se tem maneiras melhores, essa foi a primeira coisa que veio a mente.
 .price img {
     width: 25px;
     margin-right: 10px;
-    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(142deg) brightness(105%) contrast(102%);
+    filter: invert(57%) sepia(57%) saturate(3154%) hue-rotate(240deg) brightness(103%) contrast(101%);
 }
 
 #text {
@@ -190,6 +221,13 @@ não sei se tem maneiras melhores, essa foi a primeira coisa que veio a mente.
     margin-top: 20px;
 
     border-radius: 50px;
+    box-shadow: 0px 0px 10px -2px var(--box_shadow_texts);
+}
+
+#text p {
+    color: var(--text_color);
+    font-size: 15px;
+    margin-left: 20px;
 }
 
 #submit {
@@ -204,4 +242,22 @@ não sei se tem maneiras melhores, essa foi a primeira coisa que veio a mente.
 #submit img {
     width: 20px;
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(142deg) brightness(105%) contrast(102%);
+}
+
+#desc {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#desc h1 {
+    font-size: 50px;
+    font-weight: 500;
+    color: var(--main_h1);
+}
+
+#desc p {
+    width: 500px;
+    text-align: justify;
+    color: var(--main_p);
 }
