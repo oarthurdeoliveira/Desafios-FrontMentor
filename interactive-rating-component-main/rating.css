@@ -5,11 +5,27 @@
     margin: 0%;
 }
 
+
+@font-face {
+    font-family: "Overpass";
+    src: url(fonts/Overpass-VariableFont_wght.ttf);
+}
+
 :root {
     --background: hsl(216, 12%, 8%);
     --background_main:hsl(213, 19%, 18%);
     --submit_background: hsl(25, 97%, 53%);
+    --select_background: hsl(25, 97%, 53%);
+    --font_principal: "Overpass", sans-serif;
+    --star_background: #323d47;
+    --radio_background: #323d47;;
+    --radio_hover: hsl(216, 12%, 54%);;
+    --radio_checked: hsl(25, 97%, 53%);
+    --p_color: hsl(216, 12%, 54%);
+    --pthanks_color: hsl(217, 12%, 63%);
 }
+
+
 
 body {
     background-color: var(--background);
@@ -21,8 +37,11 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--background_main);
-    padding: 20px;
-    width: 350px;
+    padding: 25px;
+    max-width: 300px;
+    min-width: 280px;
+    font-family: var(--font_principal);
+    border-radius: 20px;
 }
 
 #rating {
@@ -32,16 +51,114 @@ main {
     gap: 20px;
 }
 
+
+#rating h1 {
+    color: white;
+    font-weight: 700;
+    font-size: 25px;
+    margin: 20px 0px 10px 0px;
+}
+
+#rating p {
+    color: var(--p_color);
+    font-weight: 400;
+    font-size: 15px;
+}
+
+#star {
+    background-color: var(--star_background);
+    padding: 12px;
+    border-radius: 50px;
+}
+
+
+input[type="radio"] {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: var(--radio_background);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+input[type="radio"]:hover {
+    background-color: var(--radio_hover);
+}
+
+input[type="radio"]:hover ~ span {
+    color: white;
+}
+
+
+input[type="radio"]:checked {
+    background-color: var(--radio_checked);
+  }
+  
+  input[type="radio"]:checked ~ span {
+    color: white;
+  }
+
+label span {
+    font-weight: 700;
+    position: relative;
+    left: -28px;
+    top: -15px;
+    font-size: 15px;
+    color: var(--p_color);
+    user-select: none;
+    cursor: pointer;
+}
+
 #submit {
+    font-family: var(--font_principal);
+    text-transform: uppercase;
+    font-weight: 700;
     display: block;
     background-color: var(--submit_background);
-    width: 60%;
-    padding: 5px;
+    width: 85%;
+    padding: 10px;
     border-radius: 20px;
     color: white;
     border: none;
+    letter-spacing: 2px;
+    cursor:pointer;
 }
+
+#submit:hover {
+    background-color: white;
+    color: var(--submit_background);
+}
+
+
 
 #thanks {
     display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+}
+
+#select {
+    background-color: var(--star_background);
+    color: var(--select_background);
+    font-size: 13px;
+    font-weight: 400;
+    padding: 8px 10px 5px 10px;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+#thanks h1 {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+#thanks p {
+    color: var(--pthanks_color);
+    font-size: 15px;
+    margin-bottom: 20px;
 }
