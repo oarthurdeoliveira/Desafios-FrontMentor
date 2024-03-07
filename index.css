@@ -50,6 +50,7 @@ header {
     color: #F2F2F2;
     font-weight: 400;
     font-style: normal;
+    text-align: center;
 }
 
 header > h1 {
@@ -77,8 +78,9 @@ section {
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    width: 400px;
-    /*box-shadow: 3px 1px 3px 4px #00000052a;*/
+    max-width: 400px;
+    min-height: 300px;
+    box-shadow: 0px 0px 8px 2px #00000062;
     background-color: var(--section_back);
     color: var(--section_color);
 }
@@ -86,6 +88,7 @@ section {
 section > h1 {
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
+    margin-top: 10px;
 }
 
 section > p {
@@ -101,7 +104,7 @@ section img {
     transition-duration: 0.5s;
 }
 
-.container > img:hover {
+.container a:hover img {
     transform: scale(1.1);
     overflow: hidden;
 }
@@ -114,7 +117,7 @@ section img {
     align-items: center;
     gap: 10px;
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .level {
