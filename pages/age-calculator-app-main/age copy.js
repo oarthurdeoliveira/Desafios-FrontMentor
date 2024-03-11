@@ -13,7 +13,6 @@ function calcular() {
     let ano_atual = date.getFullYear()
 
     //Input usuario
-    
     let dia_input = document.getElementById("dia").value
     let mes_input = document.getElementById("mes").value
     let ano_input = document.getElementById("ano").value
@@ -32,8 +31,6 @@ function calcular() {
     console.log(`Data atual: ${dia_atual}, ${mes_atual}, ${ano_atual}`)
     console.log(`Dia input: ${dia_input}, ${mes_input}, ${ano_input}`)
 
-    console.log(dia_input.length)
-
     if (( ano_input % 4 == 0 && ano_input % 100 != 0 ) || (ano_input % 400 == 0) ) { 
         console.log("Ano input é bissexto!");
         meses[1]++ 
@@ -42,91 +39,100 @@ function calcular() {
 
     }
 
-    // Error Check
+    // Error Check - Maybe refactor this part? It's too big for just a small change!
 
     let border_color = rs.getPropertyValue("--border_color")
     let input_color = rs.getPropertyValue("--input_color")
 
-
-    let dia_error = document.querySelector("#dia_div > .error_text")
-    let dia_borda = document.getElementById("dia")
+    let dia_div = document.querySelector("#dia_div")
+    let dia_test = document.querySelectorAll("#dia_div > .error_text")
+    let dia_put = document.getElementById("dia")
     let dia_txt = document.getElementById("dia_txt")
 
-    let mes_error = document.querySelector("#mes_div > .error_text")
-    let mes_borda = document.getElementById("mes")
+    let mes_div = document.querySelector("#mes_div")
+    let mes_test = document.querySelectorAll("#mes_div > .error_text")
+    let mes_inpu = document.getElementById("mes")
     let mes_txt = document.getElementById("mes_txt")
 
-    let ano_error = document.querySelector("#ano_div > .error_text")
-    let ano_borda = document.getElementById("ano")
+    let ano_div = document.getElementById("ano_div")
+    let ano_test = document.querySelectorAll("#ano_div > .error_text")
+    let ano_inpu = document.getElementById("ano")
     let ano_txt = document.getElementById("ano_txt")
 
-    if (dia_input.length <= 0) {
-        dia_borda.style.borderColor = error_color
-        dia_txt.style.color = error_color
-        dia_error.innerHTML = "This field is required"
-        error_test = true
-    } else if (dia_input < 1 || dia_input > meses[mes_input - 1]) {
-        dia_borda.style.borderColor = error_color
-        dia_txt.style.color = error_color
-        dia_error.innerHTML = "Must be a valid day"
-        error_test = true
-    } else if (meses[mes_input - 1] == undefined) {
+    let txt_erros = document.querySelectorAll(".error_text")
 
-        if (dia_input > 31) {
-            dia_borda.style.borderColor = error_color
-            dia_txt.style.color = error_color
-            dia_error.innerHTML = "Must be a valid day"
-            error_test = true
-        } else {
-            dia_borda.style.borderColor = border_color
-            dia_txt.style.color = input_color
-            dia_error.innerHTML = ""
+    if (dia_input < 1 || dia_input > meses[mes_input - 1] || meses[mes_input - 1] == undefined) {
+        let txt_erro = document.createElement("p")
+        txt_erro.classList.add("error_text")
+        dia_put.style.borderColor = error_color
+        dia_txt.style.color = error_color
+
+        txt_erro.innerHTML = "Must be a valid day"
+
+        if (dia_test.length == 0) {
+            dia_div.appendChild(txt_erro)
         }
+
+        error_test = true
     } else {
-        dia_borda.style.borderColor = border_color
+        dia_put.style.borderColor = border_color
         dia_txt.style.color = input_color
-        dia_error.innerHTML = ""
     }
 
 
-    if (mes_input.length <= 0) {
-        mes_borda.style.borderColor = error_color
+    if (mes_input < 1 || mes_input > 12) {
+        let txt_erro = document.createElement("p")
+        txt_erro.classList.add("error_text")
+        mes_inpu.style.borderColor = error_color
         mes_txt.style.color = error_color
-        mes_error.innerHTML = "This field is required"
-        error_test = true
-    }else if (mes_input < 1 || mes_input > 12) {
-        mes_borda.style.borderColor = error_color
-        mes_txt.style.color = error_color
-        mes_error.innerHTML = "Must be a valid month"
+
+        txt_erro.innerHTML = "Must be a valid month"
+
+        if (mes_test.length == 0) {
+            mes_div.appendChild(txt_erros)
+        }
+
         error_test = true
     } else {
-        mes_borda.style.borderColor = border_color
+        mes_inpu.style.borderColor = border_color
         mes_txt.style.color = input_color
-        mes_error.innerHTML = ""
     }
 
-    if (ano_input.length <= 0) {
-        ano_borda.style.borderColor = error_color
-        ano_txt.style.color = error_color
-        ano_error.innerHTML = "This field is required"
 
-        error_test = true
-    } else if (ano_atual < ano_input) {
-        ano_borda.style.borderColor = error_color
+    if (ano_atual < ano_input) {
+        let txt_erro = document.createElement("p")
+        txt_erro.classList.add("error_text")
+        ano_inpu.style.borderColor = error_color
         ano_txt.style.color = error_color
-        ano_error.innerHTML = "Must be in the past"
 
+        txt_erro.innerHTML = "Must be in the past"
+        
+        if (ano_test.length == 0) {
+            ano_div.appendChild(txt_erro)
+        }
 
         error_test = true
     } else {
-        ano_borda.style.borderColor = border_color
+        ano_inpu.style.borderColor = border_color
         ano_txt.style.color = input_color
-        ano_error.innerHTML = ""
+        if (ano_test.length >= 1) {
+            ano_inpu.removeChild(txt_erro)
+        }
     }
 
     
     if (error_test == true) {
         return
+    } else {
+        
+
+        if (txt_erros.length >= 1) {
+            console.log("Removing existing child")
+            for (let i of txt_erros) {
+                i.parentElement.removeChild(i)
+              }
+        }
+
     }
 
     //Error Check
