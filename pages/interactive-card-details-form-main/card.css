@@ -19,50 +19,59 @@
     padding: 0%;
 }
 
+html,body
+{   
+    height:100%;
+    min-height:100%; 
+}
+
 body 
 {
     font-family: "Space Grotesk", sans-serif;
     font-weight: 500;
     display: flex;
     flex-direction: row;
-
 }
 
-#bg 
-{
-    background-image: url(images/bg-main-desktop.png);
-    background-repeat: no-repeat;
-    width: 400px;
-    height: 681px;
-}
+
 
 
 #card 
 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#space
-{
+    background-image: url(images/bg-main-desktop.png);
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+
 }
+
 
 #front
 {
     position: relative;
     color: white;
     letter-spacing: 2px;
-    right: 300px;
-
     margin-bottom: 20px;
+    left: 100px;
 }
 
-#back
+#front img:first-child
 {
-    right: 250px;
+    width: 400px;
+}
+
+#back {
+    position: relative;
+    color: white;
+    width: auto;
+    left: 190px;
+}
+
+#back img
+{
+    width: 400px;
 }
 
 #logo
@@ -79,7 +88,7 @@ body
     left: 22px;
 
     letter-spacing: 3px;
-    font-size: 29px;
+    font-size: 26px;
 }
 
 #card_name
@@ -87,26 +96,22 @@ body
     position: absolute;
     bottom: 25px;
     left: 20px;
+    font-size: 15px;
     text-transform: uppercase;
 }
 #card_date
 {
     position: absolute;
     bottom: 25px;
-    left: 350px;
-}
-
-#back {
-    position: relative;
-    color: white;
-    width: auto;
+    font-size: 15px;
+    left: 315px;
 }
 
 #card_cvc
 {
     position: absolute;
-    bottom: 118px;
-    left: 350px;
+    bottom: 106px;
+    left: 310px;
     letter-spacing: 2px;
 }
 
@@ -116,6 +121,7 @@ main
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
 }
 
 #input_area
@@ -124,8 +130,8 @@ main
     display: flex;
     flex-direction: column;
     letter-spacing: 2px;
+    margin-left: 150px;
     gap: 10px;
-    right: 120px;    
 }
 
 #compact
@@ -194,7 +200,6 @@ main
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    right: 120px;
     gap: 10px;
 }
 

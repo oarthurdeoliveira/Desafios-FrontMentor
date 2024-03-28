@@ -216,10 +216,12 @@ function character(lenght_old, input, input_split, card_input, type, maxlenght)
         if(type == "number")
         {
             console.log("Espaço! fazer nada!")
+            return lenght_old
         }
         else
         {
             input_split[lenght_new - 1] = " "
+            return lenght_old
         }
     }
     else

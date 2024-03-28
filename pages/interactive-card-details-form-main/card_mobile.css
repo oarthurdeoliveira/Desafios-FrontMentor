@@ -1,6 +1,9 @@
 @charset "UTF-8";
 
-@media (max-width: 1050px) 
+@media (max-width: 1230px) 
 {
-
+    #input_area
+    {
+        margin-left: 200px;
+    }
 }
