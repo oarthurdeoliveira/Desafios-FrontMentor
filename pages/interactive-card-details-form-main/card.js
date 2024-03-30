@@ -28,6 +28,21 @@ let month_input = document.getElementById("month")
 let year_input = document.getElementById("year")
 let cvc_input = document.getElementById("cvc")
 
+//Error
+let name_error = document.getElementById("name_error")
+let number_error = document.getElementById("number_error")
+let date_error = document.getElementById("date_error")
+let cvc_error = document.getElementById("cvc_error")
+let all_errors = document.querySelectorAll(".error_text")
+let got_error = false
+
+//Root color
+let root = document.documentElement
+let style = getComputedStyle(root)
+let error_color = style.getPropertyValue("--error_color")
+let input_border_color = style.getPropertyValue("--input_border")
+
+
 // Name
 name_input.value = ""
 let lenght_name_old = ((name_input).value).length
@@ -39,6 +54,7 @@ number_input.value = ""
 let lenght = ((number_input).value).length
 let card_numbers = "0000000000000000" // 0000 0000 0000 0000
 let card_split = card_numbers.split("")
+
 
 // Month
 month_input.value = ""
@@ -71,6 +87,7 @@ cvc_input.addEventListener("input", input_cvc)
 
 //Ideia de criar uma função unica para o month,year e cvc
 
+
 //Do not remove the console.logs!
 function input_number()
 {
@@ -90,7 +107,7 @@ function input_number()
         text_split_last = "0"
     }
 
-    var spaces = (text.split(" ").length - 1);
+    let spaces = (text.split(" ").length - 1);
     //console.log("tem essa quantidade de espaços: " + spaces)
     //console.log("lenght antes de atualizar " + lenght)
     let last_lenght = ((number_input).value).length - spaces //problema aqui -eu de 12:55
@@ -118,6 +135,7 @@ function input_number()
     let last_string = last_number.toString()
     //console.log("lenght antigo é " + last_lenght) 
     //console.log("lenght atual é " + lenght)
+
     
     if (lenght > 16)
     {
@@ -146,6 +164,15 @@ function input_number()
         }
         
     }
+
+    if ((card_split.toString()).match(/[^$,.\d]/))
+    {
+        error_add(number_input, number_error, "Wrong format, numbers only")
+    }
+    else
+    {
+        error_remove(number_input, number_error)
+    }
     
     //console.log(card_split)
     card_number.innerHTML = ""
@@ -159,7 +186,7 @@ function input_number()
     }
 }
 
-function character(lenght_old, input, input_split, card_input, type, maxlenght)
+function character(lenght_old, input, input_split, card_input, error_input, type, maxlenght)
 {
     console.log("lenght month old é " + lenght_old)
     let lenght_new = ((input).value).length
@@ -230,6 +257,21 @@ function character(lenght_old, input, input_split, card_input, type, maxlenght)
         input_split[lenght_new - 1] = text_input_last
     }
 
+    if ((input_split.toString()).match(/[^$,.\d]/) && type === "number")
+    {
+        error_add(card_input, error_input, "Wrong format, numbers only")
+    }
+    else if ((input_split.toString()).match(/\d/) && type === "string")
+    {
+        error_add(card_input, error_input, "Wrong format, letters only")
+    }
+    else
+    {
+        error_remove(card_input, error_input)
+    }
+
+    console.log("Card input value é " + card_input.value)
+
     console.log("lenght input split é  " + lenght_input_split)
 
     if (type == "number")
@@ -252,81 +294,60 @@ function character(lenght_old, input, input_split, card_input, type, maxlenght)
         card_input.innerHTML = "Jane Appleseed"
     }
 
+    console.log(all_errors)
     console.log(type)
     return lenght_old
 }
+function error_add(card_input, error_input,error_text)
+{
+    got_error = true
+    card_input.style.borderColor = error_color
+    error_input.innerHTML = error_text
+    error_input.style.color = error_color
+}
+function error_remove(card_input, error_input)
+{
+    card_input.style.borderColor = input_border_color
+    error_input.innerHTML = ""
+}
+
+console.log("teste")
 
 function input_month()
 {
     //character(length_month_old, month_input, month_split, card_month)
-    length_month_old = character(length_month_old, month_input, month_split, card_month, "number", 2)
+    length_month_old = character(length_month_old, month_input, month_split, card_month, date_error, "number", 2)
     console.log(month_split)
 }
 
 function input_year()
 {
-    length_year_old = character(length_year_old, year_input, year_split, card_year, "number", 2)
+    length_year_old = character(length_year_old, year_input, year_split, card_year, date_error, "number", 2)
 }
 
 function input_cvc()
 {
-    lenght_cvc_old = character(lenght_cvc_old, cvc_input, cvc_split, card_cvc, "number", 3)
+    lenght_cvc_old = character(lenght_cvc_old, cvc_input, cvc_split, card_cvc, cvc_error, "number", 3)
 }
 
 function input_name()
 {
-    lenght_name_old = character(lenght_name_old, name_input, names_split, card_name)
+    lenght_name_old = character(lenght_name_old, name_input, names_split, card_name, name_error, "string")
 }
 
-/*
-function input_name()
+// TODO: Make the error system work!
+function Confirm()
 {
-    console.log("lenght name old é " + lenght_name_old)
-    let lenght_name_new = ((name_input).value).length
-    let text_name = (name_input).value
-    let text_name_split = text_name.split("")
-    console.log(text_name_split)
-
-    let text_name_last = text_name_split[text_name_split.length - 1]
-    console.log("last text name " + text_name_last)
-
-    if(lenght_name_new > lenght_name_old)
+    if (got_error == false)
     {
-        console.log("Adicionado! Nome")
-        lenght_name_old++
-    }
-    else if (lenght_name_old > lenght_name_new)
-    {
-        console.log("Removido! Year")
-        lenght_name_old--
-        names_split[lenght_name_old] = ""
-    }
-
-    console.log("lenght name old atualizado é " + lenght_name_old)
-    
-
-    if (lenght_name_new == 0)
-    {
-        card_name.innerHTML = "Jane Appleseed"
+        input_area.style.display = "none"
+        thanks.style.display = "flex"
     }
     else
     {
-        card_name.innerHTML = ""
-        names_split[lenght_name_new - 1] = text_name_last
+        console.log("do nothing error found")
     }
 
-    for(let y = 0; y < lenght_name_new; y++)
-    {
-        card_name.innerHTML += names_split[y]
-    } 
-}
-*/
-
-
-function Confirm()
-{
-    input_area.style.display = "none"
-    thanks.style.display = "flex"
 }
 
 function Continue()

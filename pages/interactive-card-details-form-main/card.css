@@ -10,13 +10,19 @@
     --sub_text: hsl(279, 6%, 55%);
     --input_border: hsl(270, 3%, 87%);
     --input_color: hsl(279, 6%, 55%);
+
+    --input_gradiante: linear-gradient(white, white) padding-box,
+    linear-gradient(90deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box;
+    --input_error: linear-gradient(white, white) padding-box,
+    linear-gradient(90deg, hsl(0, 100%, 66%), hsl(0, 100%, 66%)) border-box;
+
+    --error_color: hsl(0, 100%, 66%);
 }
 
 *
 {
-    margin: 0%;
-    margin-bottom: 0px;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
 }
 
 html,body
@@ -32,8 +38,6 @@ body
     display: flex;
     flex-direction: row;
 }
-
-
 
 
 #card 
@@ -134,12 +138,39 @@ main
     gap: 10px;
 }
 
-#compact
+#input_compact
 {
     display: flex;
-    gap: 20px;
+    flex-direction: row;
+    margin-bottom: 20px;
 }
 
+#compact_date
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#compact_row
+{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#compact_cvc
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.error_text
+{
+    letter-spacing: 0;
+    font-size: 13px;
+}
 
 .input
 {
@@ -154,8 +185,7 @@ main
 .input:focus
 {
     outline: none;
-    background: linear-gradient(white, white) padding-box,
-    linear-gradient(90deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box;
+    background: var(--input_gradiante);
     border-radius: 8px;
     border: 1px solid transparent;
 }
@@ -200,6 +230,8 @@ main
     flex-direction: column;
     justify-items: center;
     align-items: center;
+    padding: 10px;
+    margin-left: 150px;
     gap: 10px;
 }
 
@@ -221,4 +253,9 @@ main
 #continue
 {
     width: 300px;
+}
+
+.attribution
+{
+    letter-spacing: 0;
 }

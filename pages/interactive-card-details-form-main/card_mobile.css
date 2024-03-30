@@ -6,4 +6,175 @@
     {
         margin-left: 200px;
     }
+
+    #thanks
+    {
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 1050px) 
+{
+    #front img:first-child
+    {
+        width: 330px;
+    }
+
+    #logo
+    {
+        width: 50px;
+    }
+
+    #card_number
+    {
+        font-size: 20px;
+        bottom: 58px;
+    }
+
+    #card_name
+    {
+        font-size: 12px;
+    }
+
+    #card_date
+    {
+        left: 255px;
+        font-size: 12px;
+    }
+
+    #card_cvc
+    {
+        bottom: 88px;
+        left: 260px;
+        font-size: 13px;
+    }
+
+    #back
+    {
+        left: 150px;
+    }
+
+    #back img
+    {
+        width: 330px;
+    }
+
+    #input_area
+    {
+        width: 50%;
+    }
+}
+
+@media (max-width: 700px) 
+{
+    body
+    {
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
+
+    #card
+    {
+        background-image: url(images/bg-main-desktop.png);
+        background-repeat: round;
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+
+    #card_cvc
+    {
+        bottom: 88px;
+        left: 260px;
+        font-size: 13px;
+    }
+
+    #front
+    {
+        left: -25px;
+        top: 60px;
+        z-index: 3;
+    }
+
+    #back
+    {       
+        left: 45px;
+        top: 145px;
+    }
+
+
+    #input_area
+    {
+        margin-left: 0;
+        margin-top: 80px;
+        width: auto;
+    }
+
+    #thanks
+    {
+        margin-left: 0;
+    }
+
+    .date
+    {
+        width: 50px;
+    }
+}
+
+@media (max-width: 430px) 
+{
+
+    #card
+    {
+        margin-bottom: 0px;
+    }
+    #front img:first-child
+    {
+        width: 250px;
+    }
+
+    #input_area
+    {
+        margin-left: 0px;
+        margin-top: 0px;
+        padding: 20px;
+    }
+
+    #back img
+    {
+        width: 250px;
+    }
+
+    #back
+    {
+        left: 35px;
+        top: 125px; 
+    }
+
+    #card_number
+    {
+        font-size: 14px;
+        bottom: 50px;
+        left: 16px;
+    }
+
+    #card_name
+    {
+        font-size: 9px;
+        left: 15px;
+    }
+
+    #card_date
+    {
+        left: 190px;
+        font-size: 10px;
+        bottom: 25px;
+    }
+
+    #card_cvc
+    {
+        bottom: 68px;
+        left: 195px;
+        font-size: 11px;
+    }
 }
