@@ -300,7 +300,6 @@ function character(lenght_old, input, input_split, card_input, error_input, type
 }
 function error_add(card_input, error_input,error_text)
 {
-    got_error = true
     card_input.style.borderColor = error_color
     error_input.innerHTML = error_text
     error_input.style.color = error_color
@@ -309,6 +308,68 @@ function error_remove(card_input, error_input)
 {
     card_input.style.borderColor = input_border_color
     error_input.innerHTML = ""
+}
+
+
+function error_verify()
+{
+
+    let numbers_list = [card_split, month_split, year_split, cvc_split]
+    let all_inputs = [number_input, month_input, year_input, cvc_input, name_input]
+    let all_errors = [number_error, date_error, date_error, cvc_error, name_error]
+    let error_found = false
+
+
+    for(let x = 0; x < all_inputs.length; x++)
+    {
+        console.log(`Lenght do ${x} é ${(all_inputs[x].value).length}`)
+        if ((all_inputs[x].value).length == 0)
+        {
+            error_add(all_inputs[x], all_errors[x], "Can't be blank")
+            error_found = true
+        }
+        else
+        {
+            error_remove(all_inputs[x], all_errors[x])
+        }
+    }
+
+    if ((names_split.toString()).match(/\d/))
+    {
+        console.log("Existe numero no input name!")
+        return true
+    }
+    else
+    {
+        numbers_list[0] = numbers_list[0].filter(function(str) {
+            return /\S/.test(str);
+        });
+        console.log(numbers_list.length)
+
+        for(let i = 0; i < numbers_list.length; i++)
+        {
+            console.log(i)
+            if ((numbers_list[i].toString()).match(/[^$,.\d]/))
+            {
+                console.log("Existe letra no input " + i)
+                console.log(numbers_list[i])
+                error_found = true
+            }
+            else
+            {
+                console.log("input que passou " + i)
+            }
+        }
+    }
+
+    if (error_found == true)
+    {
+        return true
+    }
+    else
+    {
+        return false
+    }
 }
 
 console.log("teste")
@@ -338,7 +399,7 @@ function input_name()
 // TODO: Make the error system work!
 function Confirm()
 {
-    if (got_error == false)
+    if (error_verify() == false)
     {
         input_area.style.display = "none"
         thanks.style.display = "flex"
@@ -347,7 +408,6 @@ function Confirm()
     {
         console.log("do nothing error found")
     }
-
 }
 
 function Continue()
