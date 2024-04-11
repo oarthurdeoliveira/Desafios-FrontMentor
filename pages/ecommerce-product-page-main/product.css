@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+:root
+{
+    --main_color: hsl(26, 100%, 55%);
+}
+
+header
+{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    
+    border-bottom-style: solid;
+    border-width: 1px;
+
+}
+
+
+
+
+nav
+{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    gap: 25px;
+}
+
+nav > a
+{
+    text-decoration: none;
+    padding: 25px 20px 20px 20px;
+    border-bottom-style: solid;
+    border-color: white;
+    border-width:  3px;
+    border-bottom-style: solid;
+}
+
+nav > a:hover
+{
+    border-color: var(--main_color);
+}
+
+nav > img
+{
+    margin-right: 20px;
+}
+
+header > section
+{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    gap: 30px;
+}
+
+#avatar
+{
+    width: 50px;
+    border: 2px solid white;
+}
+
+#avatar:hover
+{
+    border: 2px solid var(--main_color);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+main
+{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#images
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+#images > div
+{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#images > img
+{
+    border-radius: 10px;
+}
+
+#main_image
+{
+    width: 500px;
+}
+
+.thumbnails
+{
+    width: 100px;
+}
+
+#info
+{
+    background-color: aqua;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#info > img
+{
+    width: 25px;
+}
+
+#price
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+#buy {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#cart_button
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 15px;
+    border-radius: 8px;
+    background-color: var(--main_color);
+    gap: 10px;
+}
