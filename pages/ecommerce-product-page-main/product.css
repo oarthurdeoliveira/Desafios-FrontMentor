@@ -11,9 +11,8 @@
 :root
 {
     --main_color: hsl(26, 100%, 55%);
+    --lightbox_background: hsla(0, 0%, 0%, 0.75);
 }
-
-
 
 header
 {
@@ -115,8 +114,13 @@ main
 
 #main_image
 {
-    width: 500px;
     cursor: pointer;
+}
+
+.big_image
+{
+    width: 500px;
+    border-radius: 10px;
 }
 
 .thumbnails
@@ -225,3 +229,57 @@ s
     gap: 10px;
 }
 
+
+#lightbox
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--lightbox_background);
+    padding: 20px;
+}
+
+#light_content
+{
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 50px;
+}
+
+#light_main
+{  
+    width: 500px;
+}
+
+#light_close
+{
+    cursor: pointer;
+    width: 50px;
+}
+
+#light_images
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.light_button
+{
+    cursor: pointer;
+    background-color: white;
+    padding:  15px 20px 15px 19px;
+    border-radius: 100%;
+}
