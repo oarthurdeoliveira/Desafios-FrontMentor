@@ -10,8 +10,9 @@ items = Number(items)
 let big_images = document.getElementsByClassName("big_image")
 light_main.src = "images/image-product-1.jpg"
 main_image.src = "images/image-product-1.jpg"
-let image = document.getElementsByClassName("thumbnails")
-let images = Object.values(image)
+let thumbnails = document.getElementsByClassName("thumbnails")
+let thumb_picture = document.querySelectorAll(".thumbnails")
+thumbnails = Object.values(thumbnails)
 let level = 0
 console.log(level)
 
@@ -22,22 +23,25 @@ let light_next = document.getElementById("light_next")
 let light_previous = document.getElementById("light_previous")
 
 
+let list = []
 // forEach é uma função para eu olhar cada elemento de um array!
 // Preciso estudar mais sobre
-// TODO: Adicionar a camada branca em cima da imagem selecionada
-images.forEach(function(elementos) {
+thumbnails.forEach(function(elementos) {
     elementos.addEventListener("click", image_click)
+    let source = elementos.getAttribute("src")
+    source = source.replace('-thumbnail', '')
+    list.push(source)
+    list = [...new Set(list)]
     
+
     function image_click()
     {
-        level = images.indexOf(elementos) + 1
-        console.log(level)
-
+        level = source.match(/\d+/)
         change_image()
     }
-});
+})
 
-//TODO: Fazer "ver mais de perto a imagem"
+
 main_image.addEventListener("click", open)
 light_close.addEventListener("click", close)
 light_next.addEventListener("click", next)
@@ -61,13 +65,13 @@ function change_image()
     console.log("level " + level)
     for(let x = 0; x < big_images.length; x++)
     {
-        big_images[x].src = `images/image-product-${level}.jpg`
+        big_images[x].src = list[level - 1]
     }
 }
 
 function next()
 {
-    if (level >= images.length)
+    if (level >= list.length)
     {
         console.log("Fazer nada")
     }
@@ -92,7 +96,6 @@ function previous()
 
 function add_item()
 {
-    console.log(level)
     console.log("adicionando!")
     items += 1
     item_element.innerHTML = items
